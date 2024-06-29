@@ -22,21 +22,29 @@ let heartSize = 150;
 let heartX, heartY;
 let smallHearts = [];
 let heartScattered = false;
+let countClick = 0;
+let button;
 
 function setup() { 
   createCanvas(1920, 1080);
   heartX = width / 2;
   heartY = height / 2;
   
-  let button = createButton("next");
+  button = createButton("go to sleep");
   button.position(960,940);
   
   button.mousePressed(repaint);
+  
 }
 
 function draw() {
   background(255); 
   drawBear();
+  if(countClick == 0){
+    button.hide();
+  }else{
+    button.show();
+  }
 
   if (!heartScattered) {
     drawHeart(heartX, heartY, heartSize);
@@ -47,6 +55,7 @@ function draw() {
 
 function mousePressed() {
   if (!heartScattered) {
+    countClick++;
     scatterHeart();
     heartScattered = true;
   } else {
