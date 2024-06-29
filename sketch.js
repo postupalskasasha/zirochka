@@ -107,5 +107,5 @@ function resetAnimation() {
 }
 
 function repaint(){
-window.location.href= "https://juleczkasurwilka.github.io/swag/"
+window.location.href= "https://activistgames.github.io/startingPoints"
 }
