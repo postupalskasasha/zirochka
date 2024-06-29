@@ -27,6 +27,11 @@ function setup() {
   createCanvas(1920, 1080);
   heartX = width / 2;
   heartY = height / 2;
+  
+  let button = createButton("next");
+  button.position(960,940);
+  
+  button.mousePressed(repaint);
 }
 
 function draw() {
@@ -99,4 +104,8 @@ function resetAnimation() {
   heartSize = 150;
   smallHearts = [];
   heartScattered = false;
+}
+
+function repaint(){
+window.location.href= "https://juleczkasurwilka.github.io/swag/"
 }
